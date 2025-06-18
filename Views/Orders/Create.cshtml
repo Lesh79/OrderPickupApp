@@ -1,0 +1,48 @@
+﻿@model OrderPickupApp.Models.Order
+
+@{
+ViewBag.Title = "Создание заказа";
+Layout = "_Layout";
+}
+
+<h2>Создание заказа</h2>
+
+<form asp-action="Create" method="post">
+    <div class="form-group">
+        <label asp-for="SenderCity" class="control-label"></label>
+        <input asp-for="SenderCity" class="form-control" />
+        <span asp-validation-for="SenderCity" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="SenderAddress" class="control-label"></label>
+        <input asp-for="SenderAddress" class="form-control" />
+        <span asp-validation-for="SenderAddress" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="ReceiverCity" class="control-label"></label>
+        <input asp-for="ReceiverCity" class="form-control" />
+        <span asp-validation-for="ReceiverCity" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="ReceiverAddress" class="control-label"></label>
+        <input asp-for="ReceiverAddress" class="form-control" />
+        <span asp-validation-for="ReceiverAddress" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="CargoWeight" class="control-label"></label>
+        <input asp-for="CargoWeight" class="form-control" />
+        <span asp-validation-for="CargoWeight" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="PickupDate" class="control-label"></label>
+        <input asp-for="PickupDate" class="form-control" type="date" />
+        <span asp-validation-for="PickupDate" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Сохранить</button>
+    <a asp-action="Index" class="btn btn-secondary">Назад</a>
+</form>
+<a asp-action="Index" class="btn btn-secondary">К списку заказов</a>
+
+@section Scripts {
+@{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

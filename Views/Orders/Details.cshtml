@@ -1,0 +1,35 @@
+﻿@model OrderPickupApp.Models.Order
+
+@{
+    ViewBag.Title = "Детали заказа";
+    Layout = "_Layout";
+}
+
+<h2>Детали заказа</h2>
+
+<div>
+    <dl class="row">
+        <dt class="col-sm-3">Номер заказа</dt>
+        <dd class="col-sm-9">@Model.Id</dd>
+
+        <dt class="col-sm-3">Город отправителя</dt>
+        <dd class="col-sm-9">@Model.SenderCity</dd>
+
+        <dt class="col-sm-3">Адрес отправителя</dt>
+        <dd class="col-sm-9">@Model.SenderAddress</dd>
+
+        <dt class="col-sm-3">Город получателя</dt>
+        <dd class="col-sm-9">@Model.ReceiverCity</dd>
+
+        <dt class="col-sm-3">Адрес получателя</dt>
+        <dd class="col-sm-9">@Model.ReceiverAddress</dd>
+
+        <dt class="col-sm-3">Вес груза</dt>
+        <dd class="col-sm-9">@Model.CargoWeight</dd>
+
+        <dt class="col-sm-3">Дата забора груза</dt>
+        <dd class="col-sm-9">@Model.PickupDate.ToShortDateString()</dd>
+    </dl>
+</div>
+
+<a asp-action="Index" class="btn btn-secondary">Назад к списку</a>
